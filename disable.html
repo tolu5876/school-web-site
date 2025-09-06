@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Suspended</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      color: #1c1e21;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1877f2;
+    }
+    .container {
+      padding: 30px 20px;
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ddd;
+      margin: 10px auto;
+    }
+    h2 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+    p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    h3 {
+      text-align: left;
+      margin-top: 25px;
+      font-size: 16px;
+    }
+    .card {
+      text-align: left;
+      margin-top: 10px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 12px;
+      background: #1877f2;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #145db2;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span>Demo App</span>
+    <span style="font-size:14px; font-weight:normal; cursor:pointer;" onclick="showNotice()">Help</span>
+  </div>
+
+  <div class="container">
+    <div class="profile-pic"></div>
+    <h2>John Doe</h2>
+    <p><strong>Your account has been suspended</strong></p>
+    <p>180 days left to appeal or your account will be permanently disabled.</p>
+    <p style="font-size:13px; color:#777;">Suspended on August 31, 2025</p>
+
+    <div class="card">
+      <h3>What this means</h3>
+      <p>Your account is not visible right now, and you cannot use it.</p>
+
+      <h3>What you can do</h3>
+      <p>You have 180 days left to appeal our decision. We may need to collect some information to review your account again.</p>
+
+      <h3>Why this happened</h3>
+      <p>Your account, or activity on it, doesn’t follow our community standards.</p>
+    </div>
+
+    <button class="btn" onclick="showNotice()">Appeal</button>
+  </div>
+
+  <script>
+    function showNotice() {
+      alert("This is a demo page. No real action will be taken.");
+    }
+  </script>
+</body>
+</html>
