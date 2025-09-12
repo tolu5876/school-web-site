@@ -46,9 +46,9 @@
             flex-direction: column;
         }
 
-        .form h2{
+         h2{
             font-size: 2rem;
-            color: #053631;
+            color: #d3dbda;
             margin-bottom: 20px;
         }
 
@@ -136,7 +136,7 @@
         .account_options p{
             color: #ffffff;
         }
-        span{
+        .link{
             color: red;
             cursor: pointer;
         }
@@ -145,18 +145,27 @@
 </head>
 <body>
  <div class="login-wrapper">
-        <form action="#">
-            <h2>Registration <form action="#"></h2>
-            <div class="input-field">
-                <input type="text" required placeholder="Enter your email">
+        <form method="">
+            <h2>Registration</h2>
+
+             <div class="input-field">
+                <input type="fullname" required placeholder="Enter your Fullname" class="fullname">
                 
             </div>
             <div class="input-field">
-                <input type="text" required placeholder="Enter your password">
-                <!-- <label>Enter your password</label> -->
+                <input type="email" required placeholder="Enter your email" class="email">
+                
+            </div>
+
+            
+                <div class="input-field">
+                <input type="date"  class="dob">
+            </div>
+            <div class="input-field">
+                <input type="password" required placeholder="Enter your password" class="password">
             </div>
              <div class="input-field">
-                <input type="text" required placeholder="Confirm your password">
+                <input type="Confirm" required placeholder="Confirm your password" class="Confirm">
                
             </div>
             <div class="password-options">
@@ -167,10 +176,41 @@
             </div>
             <button type="submit">Register</button>
             <div class="account-options">
-                <p>Already have an account <span><a href="loginform.html">Login</a></span> </p>
+                <p>Already have an account <span class="link"><a href="loginform.html">Login</a></span> </p>
             </div>
         </form>
     </div>
+    <script>
+        let form = document.querySelector("form");
+        let fullname = document.querySelector(".fullname");
+        let emaill = document.querySelector(".email");
+        let DOB = document.querySelector(".dob") 
+        let password = document.querySelector(".password");
+        let Confirm = document.querySelector(".Confirm");
+
+     let userInfo = [];
+        form.addEventListener("submit", function (e) {
+           e.preventDefault();
+           if (fullname.value === "" ||
+            emaill.value === "" ||
+             password.value === ""||
+              Confirm.value === ""
+       ) {
+            alert("All  fill are required");
+           } else{
+            let userInfo ={
+            fullname :fullname.value,
+            emaill : emaill.value,
+            password : password.value,
+            Confirm : Confirm.value,
+            };
+            let userData = JSON.stringify(userInfo)
+            localStorage.setItem("userInfo", userData);
+            alert("Your registration successfully");
+            window.location.href = "loginform.html";
+           }
+           });
+    </script>
 
 </body>
 </html>

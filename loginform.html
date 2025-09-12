@@ -46,9 +46,9 @@
             flex-direction: column;
         }
 
-        .form h2{
+        form.h2{
             font-size: 2rem;
-            color: #053631;
+            color: #7b8282;
             margin-bottom: 20px;
         }
 
@@ -140,18 +140,25 @@
             color: red;
             cursor: pointer;
         }
+        .back{
+            background-color: #09a3f1;
+            /* padding: 4px 70px; */
+        }
+        .back:hover{
+            background-color: #30a6e1;
+        }
     </style>
 </head>
 <body>
     <div class="login-wrapper">
-        <form action="#">
+        <form method="#">
             <h2>Login</h2>
             <div class="input-field">
-                <input type="text" placeholder="Enter your email">
-               
+                <input type="email" required placeholder="Enter your email" class="email">
+                
             </div>
             <div class="input-field">
-                <input type="text" placeholder="Enter your password">
+                <input type="password" placeholder="Enter your password" class="password">
                
             </div>
             <div class="password-options">
@@ -164,8 +171,33 @@
             <button type="submit">Login</button>
             <div class="account-options">
                 <p >Dont't have an account <span><a href="Registration.html">Register</a></span></p>
+                <button class="back"><a href="index.html">Back</a></button>
             </div>
         </form>
     </div>
+
+    <script>
+        let form = document.querySelector("form")
+        let email = document.querySelector(".email")
+        let password = document.querySelector(".password")
+
+        let userData = JSON.parse(localStorage.getItem("userInfo"));
+        console.log(userData.email); 
+
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            if(
+                email.value !== userData.email &&
+                password.value !== userData.password
+            ){
+                alert("User info is incorrect!");
+            } else{
+                alert("Good!,you can now proceed to Dashboard");
+                window.location.href="Dashbord.html"
+            }
+        });
+    </script>
 </body>
 </html>
